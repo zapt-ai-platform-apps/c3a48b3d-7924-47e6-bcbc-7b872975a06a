@@ -15,7 +15,8 @@
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/auth-ui-solid": "^0.3.8",
     "@zapt/zapt-js": "^1.0.5",
-    "@sentry/browser": "^8.35.0"
+    "@sentry/browser": "^8.35.0",
+    "@sentry/node": "^8.35.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",

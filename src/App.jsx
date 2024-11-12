@@ -9,6 +9,7 @@ function App() {
   const [user, setUser] = createSignal(null);
   const [currentPage, setCurrentPage] = createSignal('login');
   const [loading, setLoading] = createSignal(false);
+  const [savingNames, setSavingNames] = createSignal({});
   const [petType, setPetType] = createSignal('Dog');
 
   const checkUserSignedIn = async () => {
@@ -61,6 +62,7 @@ function App() {
   const saveName = async (name) => {
     const { data: { session } } = await supabase.auth.getSession();
     try {
+      setSavingNames(prev => ({ ...prev, [name]: true }));
       const response = await fetch('/api/saveName', {
         method: 'POST',
         headers: {
@@ -76,6 +78,8 @@ function App() {
       }
     } catch (error) {
       console.error('Error saving name:', error);
+    } finally {
+      setSavingNames(prev => ({ ...prev, [name]: false }));
     }
   };
 
@@ -180,9 +184,14 @@ function App() {
                         <span class="text-gray-700">{name}</span>
                         <button
                           onClick={() => saveName(name)}
-                          class="bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer"
+                          class={`bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer ${
+                            savingNames()[name] ? 'opacity-50 cursor-not-allowed' : ''
+                          }`}
+                          disabled={savingNames()[name]}
                         >
-                          Save
+                          <Show when={!savingNames()[name]} fallback={<span>Saving...</span>}>
+                            Save
+                          </Show>
                         </button>
                       </li>
                     )}

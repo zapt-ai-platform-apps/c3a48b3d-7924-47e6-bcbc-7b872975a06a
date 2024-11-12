@@ -1,59 +1,64 @@
 # Name My Pet
 
-**Name My Pet** is an app designed to help you generate creative and unique names for your pet and save your favorite ones for future reference.
+**Name My Pet** is an application designed to help users generate creative names for their pets and save their favorites to a personal list.
 
-## Features
-
-1. **Generate Pet Names**
-    - Get a list of suggested names for your pet based on the type of pet you have.
-    - Use AI-powered suggestions to find the perfect name.
-
-2. **Save Preferred Names**
-    - Save your favorite pet names to your personal list.
-    - Access your saved names anytime.
-
-3. **View Saved Names**
-    - Review all the pet names you have saved.
-    - Manage your list by adding or removing names.
-
-4. **User Authentication**
-    - Securely sign in using ZAPT authentication.
-    - Your saved names are stored securely and are accessible only to you.
-
-## User Journey
+## User Journeys
 
 ### 1. Sign In
 
-- **Step 1:** Open the app.
-- **Step 2:** Click on "Sign in with ZAPT".
-- **Step 3:** Choose your preferred sign-in method (Email, Google, Facebook, Apple).
-- **Step 4:** Complete the authentication process.
+1. **Landing Page**: Users are greeted with a friendly sign-in page titled "Sign in with ZAPT".
+2. **ZAPT Authentication**: Users can sign in using email magic links or through social providers like Google, Facebook, or Apple.
+3. **Access Granted**: Upon successful authentication, users are redirected to the home page where they can start generating pet names.
 
 ### 2. Generate Pet Names
 
-- **Step 1:** On the home page, select the type of pet you have from a dropdown menu.
-- **Step 2:** Click on "Generate Names".
-- **Step 3:** Wait for the list of suggested names to appear.
-- **Step 4:** Browse through the suggestions.
+1. **Home Page**: Users see a welcoming interface with options to input details about their pet.
+2. **Select Pet Type**:
+   - Users choose the type of pet they have (e.g., Dog, Cat, Bird) from a dropdown menu.
+3. **Generate Names**:
+   - Users click the "Generate Names" button.
+   - The app displays a loading state ("Generating...") while fetching name suggestions.
+4. **View Suggestions**:
+   - A list of suggested pet names is displayed.
+   - Users can scroll through the names and save their favorites.
 
-### 3. Save Preferred Names
+### 3. Save Favorite Names
 
-- **Step 1:** From the list of generated names, click the "Save" button next to any name you like.
-- **Step 2:** The name is added to your personal list of saved names.
+1. **Save Names**:
+   - Next to each suggested name, there's a "Save" button.
+   - Users click "Save" to add the name to their personal list.
+   - The button displays a loading state ("Saving...") during the save process to prevent multiple clicks.
+2. **Confirmation**:
+   - Once saved, the name is added to the "My Saved Names" list.
 
 ### 4. View Saved Names
 
-- **Step 1:** Navigate to the "My Saved Names" section.
-- **Step 2:** View all the names you have saved.
-- **Step 3:** Optionally, remove any names you no longer want by clicking the "Delete" button.
+1. **My Saved Names**:
+   - Users can view all the names they've saved in a scrollable list.
+2. **Manage Names**:
+   - Users can manage their saved names (e.g., potential future features like deleting names).
 
 ### 5. Sign Out
 
-- **Step 1:** Click on the "Sign Out" button.
-- **Step 2:** You are securely signed out of the app.
+- Users can sign out at any time using the "Sign Out" button, returning them to the sign-in page.
 
-## External Services Used
+## External API Services Used
 
-- **ZAPT Authentication:** Used for user authentication and securing user data.
-- **AI-Powered Name Generation:** Utilizes AI to generate pet name suggestions.
-- **Sentry Error Logging:** Captures and logs application errors for improved stability and debugging.
+- **ZAPT AI Services**:
+  - Used for generating pet name suggestions based on the selected pet type.
+
+## Notes
+
+- The app is free to use.
+- All user data is securely stored, and authentication is handled via ZAPT (powered by Supabase Auth).
+- The app includes error logging with Sentry for both frontend and backend to ensure any issues are promptly addressed.
+- The app is a Progressive Web App (PWA) and can be installed on your device.
+
+## Environment Variables
+
+The following environment variables are required:
+
+- `VITE_PUBLIC_APP_ID`: Your app ID for initialization.
+- `VITE_PUBLIC_SENTRY_DSN`: Sentry DSN for error logging.
+- `VITE_PUBLIC_APP_ENV`: Environment (e.g., production, development).
+- `NEON_DB_URL`: Database connection URL.
