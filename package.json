@@ -1,7 +1,7 @@
 {
   "name": "name-my-pet",
   "version": "1.0.0",
-  "description": "An app to help you name your pet and save your preferred names.",
+  "description": "An app to help you name your pet and save preferred names",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,8 +15,7 @@
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/auth-ui-solid": "^0.3.8",
     "@zapt/zapt-js": "^1.0.5",
-    "solid-markdown": "^2.0.13",
-    "@solidjs/router": "^0.8.4"
+    "@sentry/browser": "^8.35.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",

@@ -1,62 +1,59 @@
 # Name My Pet
 
-**Name My Pet** is an application designed to help users generate creative names for their pets and save their favorites to a personal list.
+**Name My Pet** is an app designed to help you generate creative and unique names for your pet and save your favorite ones for future reference.
 
-## User Journeys
+## Features
+
+1. **Generate Pet Names**
+    - Get a list of suggested names for your pet based on the type of pet you have.
+    - Use AI-powered suggestions to find the perfect name.
+
+2. **Save Preferred Names**
+    - Save your favorite pet names to your personal list.
+    - Access your saved names anytime.
+
+3. **View Saved Names**
+    - Review all the pet names you have saved.
+    - Manage your list by adding or removing names.
+
+4. **User Authentication**
+    - Securely sign in using ZAPT authentication.
+    - Your saved names are stored securely and are accessible only to you.
+
+## User Journey
 
 ### 1. Sign In
 
-1. **Landing Page**: Users are greeted with a friendly sign-in page titled "Sign in with ZAPT".
-2. **ZAPT Authentication**: Users can sign in using email magic links or through social providers like Google, Facebook, or Apple.
-3. **Access Granted**: Upon successful authentication, users are redirected to the home page where they can start generating pet names.
+- **Step 1:** Open the app.
+- **Step 2:** Click on "Sign in with ZAPT".
+- **Step 3:** Choose your preferred sign-in method (Email, Google, Facebook, Apple).
+- **Step 4:** Complete the authentication process.
 
 ### 2. Generate Pet Names
 
-1. **Home Page**: Users see a welcoming interface with options to input details about their pet.
-2. **Enter Pet Details**:
-   - Users provide information such as the type of pet (e.g., dog, cat), characteristics, or any keywords they'd like the names to reflect.
-3. **Generate Names**:
-   - Users click the "Generate Names" button.
-   - The app displays a loading state while fetching name suggestions.
-4. **View Suggestions**:
-   - A list of suggested pet names is displayed.
-   - Users can scroll through the names and mark their favorites.
+- **Step 1:** On the home page, select the type of pet you have from a dropdown menu.
+- **Step 2:** Click on "Generate Names".
+- **Step 3:** Wait for the list of suggested names to appear.
+- **Step 4:** Browse through the suggestions.
 
-### 3. Save Favorite Names
+### 3. Save Preferred Names
 
-1. **Mark Favorites**:
-   - Users click on a heart icon or checkbox next to the names they like.
-2. **Save to Database**:
-   - Users click the "Save Favorites" button to store selected names.
-   - The app confirms that the names have been saved successfully.
+- **Step 1:** From the list of generated names, click the "Save" button next to any name you like.
+- **Step 2:** The name is added to your personal list of saved names.
 
 ### 4. View Saved Names
 
-1. **My Saved Names**:
-   - Users navigate to a section where all their saved pet names are listed.
-2. **Manage Names**:
-   - Users can remove names from their saved list if they change their mind.
+- **Step 1:** Navigate to the "My Saved Names" section.
+- **Step 2:** View all the names you have saved.
+- **Step 3:** Optionally, remove any names you no longer want by clicking the "Delete" button.
 
-### 5. Additional Features
+### 5. Sign Out
 
-- **Generate Images**:
-  - Users can generate an image of their pet with the selected name using AI.
-- **Text to Speech**:
-  - Users can hear how the pet name sounds.
-- **Markdown Stories**:
-  - Users can generate a short story about their pet with the chosen name in markdown format.
+- **Step 1:** Click on the "Sign Out" button.
+- **Step 2:** You are securely signed out of the app.
 
-### 6. Sign Out
+## External Services Used
 
-- Users can sign out at any time using the "Sign Out" button, returning them to the sign-in page.
-
-## External API Services Used
-
-- **ZAPT AI Services**:
-  - Used for generating pet name suggestions based on user input.
-  - Used for generating images, text-to-speech audio, and markdown stories.
-  
-## Note
-
-- The app is free to use.
-- All user data is securely stored, and authentication is handled via ZAPT (powered by Supabase Auth).
+- **ZAPT Authentication:** Used for user authentication and securing user data.
+- **AI-Powered Name Generation:** Utilizes AI to generate pet name suggestions.
+- **Sentry Error Logging:** Captures and logs application errors for improved stability and debugging.
